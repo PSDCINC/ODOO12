@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_psdc_project_addendum_description_manager,psdc.project.addendum.description.manager,model_psdc_project_addendum_description,addendums_manager,1,1,1,1
+access_psdc_project_addendum_manager,psdc.project.addendum.manager,model_psdc_project_addendum,addendums_manager,1,1,1,1
+access_psdc_project_endorsement_reason_manager,psdc.project.endorsement.reason.manager,model_psdc_project_endorsement_reason,bails_manager,1,1,1,1
+access_psdc_project_endorsement_manager,psdc.project.endorsement.manager,model_psdc_project_endorsement,bails_manager,1,1,1,1
+access_psdc_project_bail_manager,psdc.project.bail.manager,model_psdc_project_bail,bails_manager,1,1,1,1
+access_psdc_project_policy_type_manager,psdc.project.policy.type.manager,model_psdc_project_policy_type,policies_manager,1,1,1,1
+access_psdc_project_policy_manager,psdc.project.policy.manager,model_psdc_project_policy,policies_manager,1,1,1,1
