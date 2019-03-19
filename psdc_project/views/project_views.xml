@@ -50,5 +50,75 @@
                 </xpath>
             </field>
         </record>
+        <record id='psdc_project.task_histories_view_task_form' model='ir.ui.view'>
+            <field name='name'>psdc.project.task.histories.view.task.form</field>
+            <field name='model'>project.task</field>
+            <field name='inherit_id' ref='project.view_task_form2'/>
+            <field name='arch' type='xml'>
+                <xpath expr="/form/sheet/notebook/page[@name='extra_info']" position='after'>
+                    <page name="histories" string="Historial">
+                        <field name="task_history_ids" string=" Historial">
+                            <tree name="histories_tree_view">
+                                <field name="state" string="Estado"/>
+                                <field name="time"/>
+                                <field name="comments" string="Observaciones" />
+                                <field name="task_history_image_ids"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="qrcode" string="Código QR">
+                        <group>
+                            <field name="qr_code" widget="image" width="200"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id='psdc_project.qrcode_field_edit_project' model='ir.ui.view'>
+            <field name='name'>psdc.project.qrcode.field.edit.project</field>
+            <field name='model'>project.project</field>
+            <field name='inherit_id' ref='project.edit_project'/>
+            <field name='arch' type='xml'>
+                <xpath expr="/form/sheet/notebook/page[@name='emails']" position='after'>
+                    <page name="qrcode" string="Código QR">
+                        <group>
+                            <field name="qr_code" widget="image" width="200"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id='psdc_project.planning_section_edit_project' model='ir.ui.view'>
+            <field name='name'>psdc.project.planning.section.edit.project</field>
+            <field name='model'>project.project</field>
+            <field name='inherit_id' ref='project.edit_project'/>
+            <field name='arch' type='xml'>
+                <xpath expr='/form/sheet/div[@name="button_box"]/button[@name="attachment_tree_view"]' position='before'>
+                    <button class="oe_stat_button" type="action" name="%(psdc_project.planning_window)d" icon="fa-tasks">
+                        <field string="Planificaciones" name="plannings_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+        <record id='psdc_project.subproject_field_view_task_form' model='ir.ui.view'>
+            <field name='name'>psdc.project.subproject.field.view.task.form</field>
+            <field name='model'>project.task</field>
+            <field name='inherit_id' ref='project.view_task_form2'/>
+            <field name='arch' type='xml'>
+                <xpath expr="/form/sheet/group/group/field[@name='project_id']" position='after'>
+                    <field name="subproject_id"/>
+                </xpath>
+            </field>
+        </record>
+        <record id='psdc_project.progress_field_view_task_form' model='ir.ui.view'>
+            <field name='name'>psdc.project.progress.field.view.task.form</field>
+            <field name='model'>project.task</field>
+            <field name='inherit_id' ref='project.view_task_form2'/>
+            <field name='arch' type='xml'>
+                <xpath expr="/form/sheet/group/group/field[@name='tag_ids']" position='after'>
+                    <field name="progress"/>
+                </xpath>
+            </field>
+        </record>
     </data>
 </odoo>

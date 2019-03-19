@@ -18,3 +18,7 @@ class ResPartner(models.Model):
     identity_number = fields.Char(
         string='N de Identidad',
         null=True)
+    resident_role_id = fields.Many2one(
+        'psdc_project.resident_role',
+        string='Puesto de Trabajo',
+    )
